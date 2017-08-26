@@ -1,6 +1,6 @@
 module Main where
 import Cplx
-import Dirac
+import LinAlg
 
 main = do
   let dim = 12
