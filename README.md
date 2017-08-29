@@ -19,8 +19,8 @@ ghci> a+b
 (4.0,5.0)
 ```
 
-The following program (see ``examples/ex01_overlap.hs```) calculates the overlap
-of two ket vectors
+The following program (see ```examples/ex01_overlap.hs```) calculates the
+overlap of two ket vectors
 
 ```haskell
 module Main where
