@@ -44,7 +44,7 @@ ghc --make examples/ex01_overlap
 To run the programm issue
 
 ```
-examples/ex01_overlap
+./examples/ex01_overlap
 ```
 
 in the main directory.
