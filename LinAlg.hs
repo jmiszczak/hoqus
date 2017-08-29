@@ -1,50 +1,50 @@
--- <DOC>
+-- <doc>
 -- Module for operating on vectors and matrices. It includes some functions for
 -- using bra-ket notation.
--- </DOC>
+-- </doc>
 module LinAlg where
 
 import Cplx
 
--- <DOC>
+-- <doc>
 -- Basic function for producing vectors from the canonical basis.
--- </DOC>
+-- </doc>
 ket :: Int -> Int -> [Cplx]
 ket d i = (take i zeros) ++ [1] ++ (take (d-1-i) zeros)
   where zeros = replicate (d-1) 0
 
--- <DOC>
+-- <doc>
 -- Euclidean norm of a vector.
--- </DOC>
+-- </doc>
 norm :: [Cplx] -> Double
 norm a = sqrt $ re $ sum [ x^2 | x<-a ]
 
--- <DOC>
+-- <doc>
 -- Basic function for producing base vectors.
--- </DOC>
+-- </doc>
 proj :: Int -> Int -> Int -> [Cplx]
 proj d i j = outerWith (*) (ket d i) (ket d j)
 
--- <DOC>
+-- <doc>
 -- Outer product resulting in paris of elements.
--- </DOC>
+-- </doc>
 outer :: [a] -> [b] -> [(a,b)]
 outer a b = [ (x,y) | x<-a, y<-b ]
 
--- <DOC>
+-- <doc>
 -- General form of the outer product resulting in paris of elements.
--- </DOC>
+-- </doc>
 outerWith :: (a -> b -> c) -> [a] -> [b] -> [c]
 outerWith f a b = [ f x y | x<-a, y<-b ]
 
--- <DOC>
+-- <doc>
 -- Kronecker product is defined in terms of the outer product
--- </DOC>
+-- </doc>
 kron ::  Num a => [a] -> [a] -> [a]
 kron a b = outerWith (*) a b
 
--- <DOC>
+-- <doc>
 -- Function for calculating the inner product of vectors.
--- </DOC>
+-- </doc>
 overlap :: [Cplx] -> [Cplx] -> Double
 overlap vec1 vec2 = re $ sum $ zipWith (*) vec1 vec2
