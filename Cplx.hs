@@ -1,38 +1,39 @@
--- <DOC>
+-- <doc>
 -- Module for representing and manipulating complex numbers.
--- </DOC>
+-- </doc>
 module Cplx where
 
--- <DOC>
+-- <doc>
 -- Basic data type for storing complex numbers.
--- </DOC>
+-- </doc>
 data Cplx = Cplx {re :: Double, im :: Double } deriving (Eq)
 -- re Cplx a b = a
 -- im Cplx a b = b
 
--- <DOC>
+-- <doc>
 -- Complex conjugate of a number.
--- </DOC>
+-- </doc>
 conj :: Cplx -> Cplx
-conj c = Cplx (re c)  (im c)
+conj c = Cplx (re c)  (-1*( im c))
 
--- <DOC>
+-- <doc>
 -- Absolute value of a complex number. In contrast to the abs function
 -- overloaded fomr Num, this function returns Double.
--- </DOC>
+-- </doc>
 cabs :: Cplx -> Double
 cabs c = (sqrt $ (re c)^2 + (im c)^2)
 
--- <DOC>
+-- <doc>
 -- Operator for creating new complex number from two Double numbers used as
 -- a real and as an imaginary part.
--- </DOC>
+-- </doc>
 (+:) :: Double -> Double -> Cplx
 a +: b = Cplx a b
 
--- <DOC>
--- Function overloaded from Num class.
--- </DOC>
+-- <doc>
+-- Functions overloaded from Num class. In particular they implement the
+-- arithmetic on complex numbers.
+-- </doc>
 instance Num Cplx where
   a + b = (re a + re b) +: (im a + im b)
   a * b = (re a * re b - im a * im b) +: (im a * re b + re a * im b)
@@ -41,8 +42,8 @@ instance Num Cplx where
   signum a = a
   fromInteger a = ((fromInteger a) :: Double) +: 0.0
 
--- <DOC>
+-- <doc>
 -- Function overloaded from Show class. Complex numbers are displayed as pairs.
--- </DOC>
+-- </doc>
 instance Show Cplx where
   show (Cplx a b) = "(" ++ show a ++ ","  ++ show b ++ ")"
