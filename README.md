@@ -6,8 +6,8 @@ Mathematica](https://zksi.iitis.pl/wiki/projects:mathematica-qi).
 
 # Example
 
-The simplest example is the sum of two complex numbers. This requires loadin
-```Cplx.hs``` module. 
+The simplest example is the calculation of the sum of two complex numbers using
+```ghci``` interpreter. This requires loading ```Cplx.hs``` module.
 
 ```haskell
 ghci> :load Cplx
@@ -19,7 +19,8 @@ ghci> a+b
 (4.0,5.0)
 ```
 
-The following program calculates the overlap of two vectors
+The following program (see ``examples/ex01_overlap.hs```) calculates the overlap
+of two ket vectors
 
 ```haskell
 module Main where
@@ -33,3 +34,17 @@ main = do
   let res = overlap a b
   print res
 ```
+
+In order to compile on of the exampes use ```ghc``` in the main directory
+
+```
+ghc --make examples/ex01_overlap
+```
+
+To run the programm issue
+
+```
+examples/ex01_overlap
+```
+
+in the main directory.
