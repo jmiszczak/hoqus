@@ -10,8 +10,8 @@ import Cplx
 -- Basic function for producing vectors from the canonical basis.
 -- </DOC>
 ket :: Int -> Int -> [Cplx]
-ket d i = [ x | x <- take (i-1) zeros] ++ [1] ++ [ x | x <- take (d-i) zeros]
-  where zeros = repeat 0
+ket d i = (take i zeros) ++ [1] ++ (take (d-1-i) zeros)
+  where zeros = replicate (d-1) 0
 
 -- <DOC>
 -- Euclidean norm of a vector.
@@ -22,8 +22,8 @@ norm a = sqrt $ re $ sum [ x^2 | x<-a ]
 -- <DOC>
 -- Basic function for producing base vectors.
 -- </DOC>
-proj :: Int -> Int -> Int -> [[Cplx]]
-proj d i j = outer (ket d i) (ket d j)
+proj :: Int -> Int -> Int -> [Cplx]
+proj d i j = outerWith (*) (ket d i) (ket d j)
 
 -- <DOC>
 -- Outer product resulting in paris of elements.
