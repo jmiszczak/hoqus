@@ -6,6 +6,9 @@ Mathematica](https://zksi.iitis.pl/wiki/projects:mathematica-qi).
 
 # Example
 
+The simplest example is the sum of two complex numbers. This requires loadin
+```Cplx.hs``` module. 
+
 ```haskell
 ghci> :load Cplx
 [1 of 1] Compiling Cplx             ( Cplx.hs, interpreted )
