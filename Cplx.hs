@@ -41,8 +41,8 @@ instance Num Cplx where
   signum a = a
   fromInteger a = ((fromInteger a) :: Double) +: 0.0
 
-  -- <DOC>
-  -- Function overloaded from Show class.
-  -- </DOC>
+-- <DOC>
+-- Function overloaded from Show class. Complex numbers are displayed as pairs.
+-- </DOC>
 instance Show Cplx where
   show (Cplx a b) = "(" ++ show a ++ ","  ++ show b ++ ")"
