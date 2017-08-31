@@ -6,23 +6,19 @@ data Cplx = Cplx {re :: Double, im :: Double } deriving (Eq)
 -- re Cplx a b = a
 -- im Cplx a b = b
 
-
--- |Complex conjugate of a number.
+-- |Function 'conj' returns a complex conjugate of a complex number.
 conj :: Cplx -> Cplx
-conj c = Cplx (re c)  (-1*( im c))
+conj c = Cplx (re c) (-1*( im c))
 
-
--- |Absolute value of a complex number. In contrast to the abs function
--- overloaded fomr Num, this function returns Double.
+-- |Funciton 'cabs' returns the absolute value of a complex number. In contrast
+-- to the 'abs' function overloaded from 'Num', this function returns 'Double'.
 cabs :: Cplx -> Double
 cabs c = (sqrt $ (re c)^2 + (im c)^2)
 
-
--- |Operator for creating new complex number from two Double numbers used as
+-- |Operator for creating new complex number from two 'Double' numbers used as
 -- a real and as an imaginary part.
 (+:) :: Double -> Double -> Cplx
 a +: b = Cplx a b
-
 
 -- |Functions overloaded from Num class. In particular they implement the
 -- arithmetic on complex numbers.
@@ -34,7 +30,7 @@ instance Num Cplx where
   signum a = a
   fromInteger a = ((fromInteger a) :: Double) +: 0.0
 
-
--- |Function overloaded from Show class. Complex numbers are displayed as pairs.
+-- |Function 'show' overloaded from 'Show' class. Complex numbers are displayed
+-- as pairs.
 instance Show Cplx where
   show (Cplx a b) = "(" ++ show a ++ ","  ++ show b ++ ")"
