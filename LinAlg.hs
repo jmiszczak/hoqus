@@ -2,20 +2,20 @@
 -- using bra-ket notation.
 module LinAlg where
 
-import Cplx
+import Data.Complex
 
 -- |Function 'ket' provide basic functionality for producing vectors from the
 -- canonical basis.  Vectors are represented as lists (as in Mathematica).
-ket :: Int -> Int -> [Cplx]
+ket :: Int -> Int -> [Complex Double]
 ket d i = (take i zeros) ++ [1] ++ (take (d-1-i) zeros)
   where zeros = replicate (d-1) 0
 
 -- |The 'norm' function calculates the Euclidean norm of a vector.
-norm :: [Cplx] -> Double
-norm a = sqrt $ re $ sum [ x^2 | x<-a ]
+norm :: [Complex Double] -> Double
+norm a = sqrt $ realPart $ sum [ x^2 | x<-a ]
 
 -- |The 'proj' function builds d-dimensional operator |i><j|.
-proj :: Int -> Int -> Int -> [Cplx]
+proj :: Int -> Int -> Int -> [Complex Double]
 proj d i j = outerWith (*) (ket d i) (ket d j)
 
 -- |The 'outer' defines the form of outer product resulting in paris of elements. 
@@ -32,5 +32,5 @@ kron a b = outerWith (*) a b
 
 -- |Function 'overlap' for calculating the inner product of two vectors. In
 -- Dirac notation this is represented as <v|w>.
-overlap :: [Cplx] -> [Cplx] -> Double
-overlap vec1 vec2 = re $ sum $ zipWith (*) vec1 vec2
+overlap :: [Complex Double] -> [Complex Double] -> Double
+overlap vec1 vec2 = realPart $ sum $ zipWith (*) vec1 vec2
