@@ -4,27 +4,15 @@ This repo contains some functions used for playing with quantum mechanics in
 Haskell. Much of this work is based on [package for
 Mathematica](https://zksi.iitis.pl/wiki/projects:mathematica-qi).
 
-# Example
+# Examples
 
-The simplest example is the calculation of the sum of two complex numbers using
-```ghci``` interpreter. This requires loading ```Cplx.hs``` module.
-
-```haskell
-ghci> :load Cplx
-[1 of 1] Compiling Cplx             ( Cplx.hs, interpreted )
-Ok, modules loaded: Cplx.
-ghci> let a = 1+:2
-ghci> let b = 3+:3
-ghci> a+b
-(4.0,5.0)
-```
+## Quantum computing
 
 The following program (see ```examples/ex01_overlap.hs```) calculates the
 overlap of two ket vectors
 
 ```haskell
 module Main where
-import Cplx
 import LinAlg
 
 main = do
@@ -48,3 +36,21 @@ To run the programm issue
 ```
 
 in the main directory.
+
+## Other functions
+
+Module ```Cplx``` provides some functionality for manipulating complex numbers.
+It is located in ```experiments``` directory. The simplest example of usng it
+is the calculation of the sum of two complex numbers using ```ghci```
+interpreter. This requires loading ```Cplx.hs``` module.
+
+```haskell
+ghci> :load Cplx
+[1 of 1] Compiling Cplx             ( Cplx.hs, interpreted )
+Ok, modules loaded: Cplx.
+ghci> let a = 1+:2
+ghci> let b = 3+:3
+ghci> a+b
+(4.0,5.0)
+```
+
