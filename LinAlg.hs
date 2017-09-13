@@ -9,7 +9,7 @@ import Data.List (transpose)
 -- import Prelude hiding ((+))
 -- import qualified Prelude
 
--- | Function 'ket' provide basic functionality for producing vectors from the
+-- | Function 'ket' provides basic functionality for producing vectors from the
 -- canonical basis. Vectors and matrices are represented as lists and are stored
 -- in column-order (as in Mathematica). Operations on vectors and matrices have
 -- to be defined using new operators.
@@ -45,8 +45,8 @@ overlap vec1 vec2 = sum $ zipWith (*) vec1 vec2
 -- | The scalar product is defined to be consistent with the other operators. It
 -- is identical with the 'overlap' function and it suppose to resemble the
 -- braket.
-(<.>) :: [Complex Double] -> [Complex Double] -> Complex Double
-(<.>) = overlap 
+(<>) :: [Complex Double] -> [Complex Double] -> Complex Double
+(<>) = overlap 
 
 -- | Definition of the vector addition for two complex vectors. The standard '+'
 -- operator does not work, and it is not a good idead to hide it.
@@ -54,8 +54,8 @@ overlap vec1 vec2 = sum $ zipWith (*) vec1 vec2
 (+>) = zipWith (+)
 
 -- | The multiplication of a vector by a scalar.
-(*>) :: Complex Double -> [Complex Double] -> [Complex Double]
-(*>) c v = [ c*x | x<-v ]
+(.*) :: Complex Double -> [Complex Double] -> [Complex Double]
+(.*) c v = [ c*x | x<-v ]
 
 -- | Matrix-vector multiplication.
 (#>) :: [[Complex Double]] -> [Complex Double] -> [Complex Double]
