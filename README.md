@@ -15,7 +15,7 @@ Haskell](https://hackage.haskell.org/package/hmatrix).
 
 ## Quantum computing
 
-The following program (see ```examples/ex02_overlap.hs```) demonstrates how to
+The following program (see ```examples/ex01_ket_proj.hs```) demonstrates how to
 use kets and projectors along with matrix-vector multiplication.
 
 ```haskell
