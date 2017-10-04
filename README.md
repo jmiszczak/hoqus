@@ -1,38 +1,51 @@
 # hoqus
 
+## Description
+
 This repo contains some functions used for playing with quantum mechanics in
 Haskell. Much of this work is based on [package for
 Mathematica](https://zksi.iitis.pl/wiki/projects:mathematica-qi).
+
+## Dependencies
+
+Numerical procedures used in ```hoqus``` are based on [hmatrix package for
+Haskell](https://hackage.haskell.org/package/hmatrix).
 
 # Examples
 
 ## Quantum computing
 
-The following program (see ```examples/ex01_overlap.hs```) calculates the
-overlap of two ket vectors
+The following program (see ```examples/ex02_overlap.hs```) demonstrates how to
+use kets and projectors along with matrix-vector multiplication.
 
 ```haskell
 module Main where
-import LinAlg
+
+import Numeric.LinearAlgebra
+import Dirac
 
 main = do
-  let dim = 12
-  let a = ket dim 3
-  let b = ket dim 6
-  let res = overlap a b
-  print res
+  let dim = 4
+  let v1 = ket dim 0
+  let v2 = ket dim 4
+  let prj = proj 4 0 0
+  print v1
+  print v2
+  print $ v1 + v2
+  print $ prj #> v1
+  print $ prj #> v2
 ```
 
 In order to compile on of the exampes use ```ghc``` in the main directory
 
 ```
-ghc --make examples/ex01_overlap
+ghc --make examples/ex01_ket_proj
 ```
 
 To run the programm issue
 
 ```
-./examples/ex01_overlap
+./examples/ex01_ket_proj
 ```
 
 in the main directory.
@@ -40,9 +53,11 @@ in the main directory.
 ## Other functions
 
 Module ```Cplx``` provides some functionality for manipulating complex numbers.
-It is located in ```experiments``` directory. The simplest example of usng it
-is the calculation of the sum of two complex numbers using ```ghci```
-interpreter. This requires loading ```Cplx.hs``` module.
+It is located in ```alternative``` directory as it is not used in the
+```hoqus```. The simplest example of using it is the calculation of the sum of
+two complex numbers using ```ghci``` interpreter. This requires loading
+```Cplx.hs``` module, so you need to make sure that ```ghci``` know whre it is
+located.
 
 ```haskell
 ghci> :load Cplx
