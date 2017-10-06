@@ -1,12 +1,15 @@
+-- | Module providing various functions popular in quantum calculations, but
+-- not implemented in "Numeric.LinearAlgebra".
 module Hoqus.MtxFun where
 
-import Data.List (transpose)
-
--- | Diagonal of a matrix. This function ignores the non-sqare part of the
--- matrix.
-diag :: [[a]] -> [a]
-diag m = zipWith (!!) m [0..((min (length m) (length $ transpose m))-1)]
+import Numeric.LinearAlgebra.Data
+import Numeric.LinearAlgebra
 
 -- | Trace of a matrix. This function ignores the non-sqare part of the matrix.
-tr :: Num a => [[a]] -> a
-tr m = sum (diag m)
+trace :: (Element c, Num c) => Matrix c -> c
+trace = sum.toList.takeDiag
+
+-- | Logarithm of a matrix. Based on 'Numeric.LinearAlgebra.matFunc' function
+-- from "Numeric.LinearAlgebra" package.
+logm :: Matrix C -> Matrix C
+logm = matFunc log
