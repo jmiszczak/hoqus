@@ -18,7 +18,7 @@ res m = concat $ transpose m
 -- |Function 'unvec' provides column-order unvectorization. Note that the size
 -- of the input list is not checked and the result might not be a proper matrix.
 unvec :: Int -> [a] -> [[a]]
-unvec d [] = []
+unvec _ [] = []
 unvec d v = [take d v] ++ unvec d (drop d v)
 
 -- | Function 'unres' provides row-based unvectorization.
