@@ -1,5 +1,5 @@
 -- | Module for operating on vectors and matrices. It includes some functions
--- for using bra-ket notation, based on data types and functios from 'hmarix'
+-- for using bra-ket notation, based on data types and functions from 'hmarix'
 -- package.
 module Hoqus.Dirac where
 
@@ -11,9 +11,10 @@ import Numeric.LinearAlgebra
 -- import qualified Prelude
 
 -- | Function 'ket' provides basic functionality for producing vectors from the
--- canonical basis. Vectors and matrices are not represented as lists (as in
--- Mathematica), but using -- This makes possible to use operations on vectors
--- and matrices defined in 'hmatrix'.
+-- canonical basis. Vectors and matrices are not represented as lists (as in 
+-- Mathematica), but using data types from "Numeric.LinearAlgebra.Data" in
+-- 'hmatrix' package. This makes possible to use operations on vectors  and
+-- matrices defined in 'hmatrix'.
 ket :: Int -> Int -> Vector C
 ket d i = fromList $ (take i zeros) ++ [1] ++ (take (d-1-i) zeros)
   where zeros = replicate (d-1) 0
