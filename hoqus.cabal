@@ -1,0 +1,15 @@
+Name:                hoqus
+Version:             0.1
+Description:         Quantum mathematics in Haskell
+License:             MIT
+License-file:        LICENSE
+Author:              Jarek Miszczak
+Maintainer:          miszczak@iitis.pl
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+
+Library
+  Build-Depends:     base >= 3 && < 5 
+  Build-Depends:     hmatrix >= 0.18.1.0
+  Exposed-modules:   Hoqus.Dirac, Hoqus.Gates
+  ghc-options:       -Wall
