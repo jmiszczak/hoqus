@@ -4,6 +4,7 @@
 module Dirac where
 
 import Numeric.LinearAlgebra.Data
+import Numeric.LinearAlgebra
 
 -- This can be used to hide the standard operators.
 -- import Prelude hiding ((+))
@@ -28,3 +29,8 @@ outer a b = [ (x,y) | x<-a, y<-b ]
 -- | General form of the outer product resulting in paris of elements.
 outerWith :: (a -> b -> c) -> [a] -> [b] -> [c]
 outerWith f a b = [ f x y | x<-a, y<-b ]
+
+-- | Function `overlap` is just an alternative for the scalar product from
+-- hmatrix.
+overlap :: Vector C -> Vector C -> C
+overlap = (<.>) 
