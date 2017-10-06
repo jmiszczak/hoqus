@@ -11,7 +11,7 @@ Cabal-Version:       >=1.2
 Library
   Build-Depends:     base >= 3 && < 5 
   Build-Depends:     hmatrix >= 0.18.1.0
-  Exposed-modules:   Hoqus.Dirac, Hoqus.Gates
+  Exposed-modules:   Hoqus.Dirac, Hoqus.Gates, Hoqus.MtxFun, Hoqus.MtxOrd
   ghc-options:       -Wall
 --  hs-source-dirs:     src
 
