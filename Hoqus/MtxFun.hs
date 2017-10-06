@@ -1,4 +1,4 @@
-module MtxFun where
+module Hoqus.MtxFun where
 
 import Data.List (transpose)
 

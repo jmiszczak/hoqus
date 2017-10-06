@@ -1,6 +1,6 @@
 -- | Module providing definitions of basic quantum gates, including parametrized
 -- rotation and controlled operations.
-module Gates where
+module Hoqus.Gates where
 
 import Numeric.LinearAlgebra.Data
 import Numeric.LinearAlgebra

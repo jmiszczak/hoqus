@@ -1,7 +1,7 @@
 -- | Module for operating on vectors and matrices. It includes some functions
 -- for using bra-ket notation, based on data types and functios from 'hmarix'
 -- package.
-module Dirac where
+module Hoqus.Dirac where
 
 import Numeric.LinearAlgebra.Data
 import Numeric.LinearAlgebra

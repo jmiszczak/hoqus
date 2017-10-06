@@ -1,4 +1,6 @@
-module MtxOrd where
+-- | Module providing methods for reshaping and converting between vectors and
+-- matrices. Method names try to follow sstandard names used in textbooks.
+module Hoqus.MtxOrd where
 
 import Data.List (transpose)
 
