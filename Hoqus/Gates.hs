@@ -8,19 +8,19 @@ import Numeric.LinearAlgebra.Data
 ii :: C
 ii = 0:+1
 
--- | Pauli gate X, logical negation
+-- | Pauli gate X, logical negation.
 sx :: Matrix C
 sx = (2><2) [0, 1, 1, 0] :: Matrix C
 
--- | Pauli gate Y
+-- | Pauli gate Y.
 -- sy = -ii ( sx <> sz )
 sy :: Matrix C
 sy = (2><2) [0, -ii, ii, 0] :: Matrix C
 
--- | Pauli gate Z
+-- | Pauli gate Z.
 sz :: Matrix C
 sz = (2><2) [1, 0, 0, -1] :: Matrix C
 
--- | Hadamard gate
+-- | Hadamard gate.
 h :: Matrix C
 h = 1/sqrt(2) * (2><2) [1, 1, 1, -1] :: Matrix C
