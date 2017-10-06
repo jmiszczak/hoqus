@@ -13,3 +13,9 @@ Library
   Build-Depends:     hmatrix >= 0.18.1.0
   Exposed-modules:   Hoqus.Dirac, Hoqus.Gates
   ghc-options:       -Wall
+--  hs-source-dirs:     src
+
+--Executable ex01_ket_proj
+--  main-is:          ex01_ket_proj.hs
+--  hs-source-dirs:   examples
+--  other-modules:    Hoqus
