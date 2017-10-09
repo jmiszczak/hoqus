@@ -5,5 +5,7 @@ module Hoqus where
 import Numeric.LinearAlgebra.Data
 import Numeric.LinearAlgebra
 
-import Dirac
-import Gates
+import Hoqus.Dirac
+import Hoqus.Gates
+import Hoqus.MtxFun
+import Hoqus.Fidelity

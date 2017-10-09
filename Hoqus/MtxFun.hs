@@ -6,7 +6,7 @@ import Numeric.LinearAlgebra.Data
 import Numeric.LinearAlgebra
 
 -- | Trace of a matrix. This function ignores the non-sqare part of the matrix.
-trace :: (Element c, Num c) => Matrix c -> c
+trace :: Matrix C -> C
 trace = sum.toList.takeDiag
 
 -- | Logarithm of a matrix. Based on 'Numeric.LinearAlgebra.matFunc' function
