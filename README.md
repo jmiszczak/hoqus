@@ -22,7 +22,7 @@ use kets and projectors along with matrix-vector multiplication.
 module Main where
 
 import Numeric.LinearAlgebra
-import Dirac
+import Hoqus.Dirac
 
 main = do
   let dim = 4
