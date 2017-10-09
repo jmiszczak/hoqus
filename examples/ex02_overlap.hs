@@ -1,7 +1,7 @@
 module Main where
 
 import Numeric.LinearAlgebra
-import Dirac
+import Hoqus.Dirac
 
 
 main = do
