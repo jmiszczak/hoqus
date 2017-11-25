@@ -1,17 +1,17 @@
 -- | Module providing methods for reshaping and converting between vectors and
--- matrices. Method names try to follow sstandard names used in textbooks.
+-- matrices. Method names try to follow standard names used in textbooks.
 module Hoqus.MtxOrd where
 
 import Data.List (transpose)
 
--- |Function 'vec' implements the vectorization and it is equvalent to concat.
+-- |Function 'vec' implements the vectorization and it is equivalent to concat.
 -- We are using column vectors and matrices are stored in column-order - as a
 -- list of columns.
 vec :: [[a]] -> [a]
 vec m = concat m
 
--- |Function 'res' is equavalent to the vectorization in the row order. This is
--- implemented by using 'tranpose' function from 'Data.List'.
+-- |Function 'res' is equivalent to the vectorization in the row order. This is
+-- implemented by using 'transpose' function from 'Data.List'.
 res :: [[a]] -> [a]
 res m = concat $ transpose m
 

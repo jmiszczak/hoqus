@@ -1,4 +1,4 @@
--- | Module for providing variouse functionals used in calculations involving
+-- | Module for providing various functionals used in calculations involving
 -- quantum mathematics. This includes the fidelity and trace norm.
 module Hoqus.Fidelity where
 

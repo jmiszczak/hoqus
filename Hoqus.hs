@@ -1,4 +1,4 @@
--- | Main module for loading all parts of Hoqus package and dependiences from
+-- | Main module for loading all parts of Hoqus package and dependencies from
 -- 'hmatrix' package.
 module Hoqus where
 
