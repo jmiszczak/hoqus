@@ -1,4 +1,4 @@
-# hoqus
+# hoqus package
 
 ## Description
 
