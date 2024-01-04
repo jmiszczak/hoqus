@@ -4,7 +4,7 @@
 
 This repo contains some functions used for playing with quantum mechanics in
 Haskell. Much of this work is based on [package for
-Mathematica](https://zksi.iitis.pl/wiki/projects:mathematica-qi).
+Mathematica](https://github.com/jmiszczak/qi).
 
 ## Dependencies
 
